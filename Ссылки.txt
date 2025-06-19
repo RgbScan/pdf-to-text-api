@@ -1,4 +1,0 @@
-API_pdf_to_text
-http://178.217.101.12:3001/dashboard/1 - мониторинг
-https://pdf-api.ittalk-labs.ru/docs - сам api
-https://my.ihc.ru/ - сервер арнедован здесь от 19.06.2025
