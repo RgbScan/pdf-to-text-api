@@ -1,15 +1,21 @@
-# Byte-compiled / optimized / DLL files
+# Python
 __pycache__/
-*.py[cod]
+*.pyc
 *.pyo
 *.pyd
-
-# Virtual environment
-venv/
 .env
+.venv/
+venv/
+.env.*
+*.env
 
-# VS Code settings
+# VS Code
 .vscode/
 
-# Test cache
-.pytest_cache/
+# Docker
+*.log
+*.pid
+/data/
+*.gitignore
+*.dockerignore
+Ссылки.txt
