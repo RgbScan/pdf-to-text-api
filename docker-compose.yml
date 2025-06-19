@@ -1,0 +1,43 @@
+services:
+  api:
+    container_name: pdf-txt-container
+    build: .
+    ports:
+      - "8000:8000"
+    networks:
+      - api-net
+    
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./Caddyfile:/etc/caddy/Caddyfile
+      - caddy_data:/data
+      - caddy_config:/config
+    depends_on:
+      - api
+    networks:
+      - api-net
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    container_name: uptime-kuma
+    restart: unless-stopped
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma-data:/app/data
+    networks:
+     - api-net
+
+networks:
+  api-net:
+
+volumes:
+  caddy_data:
+  caddy_config:
+  uptime-kuma-data:

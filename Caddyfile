@@ -1,0 +1,7 @@
+{$DOMAIN} {
+    reverse_proxy /extract* pdf-txt-container:8000
+    reverse_proxy /health* pdf-txt-container:8000
+    reverse_proxy /docs* pdf-txt-container:8000
+    reverse_proxy /openapi.json pdf-txt-container:8000
+    reverse_proxy / redir /docs
+}
