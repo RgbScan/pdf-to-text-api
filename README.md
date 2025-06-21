@@ -115,14 +115,18 @@ http://localhost:3001
 ## 📥 Использование API
 Отправьте PDF-файл и получите извлечённый текст:
 ```
-curl -X POST http://localhost/extract \
-  -F "file=@CB_RF.pdf"
+curl -X POST http://localhost/extract -F "file=@CB_RF.pdf"
 ```
+
 Если сервис развернут с HTTPS и доменом:
 ```
-curl -X POST https://yourdomain.com/extract \
-  -F "file=@/path/to/your/file.pdf"
+curl -X POST https://yourdomain.com/extract -F "file=@/path/to/your/file.pdf"
 ```
+Готовое решение
+```
+curl -X POST http://pdf-api.ittalk-labs.ru/extract -F "file=@CB_RF.pdf"
+```
+
 Ответ: текстовый фрагмент в формате application/json:
 ```
 {
